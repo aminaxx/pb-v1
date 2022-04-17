@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 //Create api
 function create(req, res, next) {
   let name = req.body.name;
-  let mail = red.body.mail;
+  let mail = req.body.mail;
   let mobile = req.body.mobile;
   let contact = new Contact({
     name,

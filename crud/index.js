@@ -4,11 +4,9 @@ const router = require("./routes/contact");
 var app = express();
 
 //Route
-app.get("/", function (req, res) {
-  res.send("hello world");
-});
-
-app.use("/contact", router);
+// app.get("/", function (req, res) {
+//   res.send("hello world");
+// });
 
 app.use("/contact", router);
 

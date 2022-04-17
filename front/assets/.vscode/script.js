@@ -1,5 +1,3 @@
-// const axios = require("axios").default;
-
 var contactName = document.getElementById("contactName");
 var contactPhone = document.getElementById("contactPhone");
 var contactMail = document.getElementById("contactMail");
@@ -13,7 +11,6 @@ var search = document.getElementById("search");
 contactForm.addEventListener("submit", addContact);
 search.addEventListener("keyup", searchContact);
 displayContacts();
-
 function addContact(e) {
   e.preventDefault();
   var contact = {
@@ -38,8 +35,6 @@ function addContact(e) {
   displayContacts();
   contactForm.reset();
 }
-
-//qalir
 function displayContacts() {
   if (localStorage.getItem("contacts") !== null) {
     var temp = "";
@@ -99,7 +94,6 @@ function displayContacts() {
     // contactTable.appendChild(newRow);
   }
 }
-
 function deleteContact(name) {
   console.log(name);
   contacts = JSON.parse(localStorage.getItem("contacts"));
@@ -121,7 +115,7 @@ function editContact(name) {
   console.log(contact);
   document.getElementById("search").style.display = "none";
   document.getElementById("result").style.display = "none";
-  document.getElementById("editcontact").style.display = "";
+  // document.getElementById("editcontact").style.display = '';
   document.getElementById("editcontact").innerHTML =
     "<div>" +
     '<input type="text"  placeholder="Name here" id="nameInput2" value="' +
@@ -207,17 +201,18 @@ function validateContact(name, phone, email) {
   }
   return true;
 }
-
-// Connect with backend
-axios
-  .post("http://localhost:8000/contact", {
-    name: "Lala",
-    mail: "lala@mail.ru",
-    mobile: "2345678907654",
-  })
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+function searchContact() {
+  var filter = search.value.toUpperCase();
+  var tr;
+  if (localStorage.getItem("contact") != false) {
+    for (var i = 0; i < contacts.length; i++) {
+      tr = contactTable.getElementsByTagName("tr")[i];
+      td = tr.getElementsByTagName("td")[0];
+      if (td.textContent.toUpperCase().indexOf(filter) > -1) {
+        tr.style.display = "";
+      } else {
+        tr.style.display = "none";
+      }
+    }
+  }
+}
