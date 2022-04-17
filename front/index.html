@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Phone Book</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Site Bookmarker</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/main.css" />
+    </head>
+
+    <body>
+        <div class="phonebook-container py-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <h1 class="h3 text-center text-muted">Phone Book</h1>
+                        <form id="contactForm" method="get" action="">
+                            <div class="form-group">
+                                <label for="contactName" class="text-muted">Name</label>
+                                <input id="contactName" class="form-control" type="text" />
+                                <div id="nameAlert"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactPhone" class="text-muted">Phone</label>
+                                <input id="contactPhone" class="form-control" type="text" />
+                                <div id="phoneAlert"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactMail" class="text-muted">Email</label>
+                                <input id="contactMail" class="form-control" type="text" />
+                                <div id="mailAlert"></div>
+                            </div>
+                            <button type="submit" class="btn btn-outline-primary">
+                                Add
+                            </button>
+                        </form>
+
+
+                        <div id="editcontact" class="edit">
+                        
+                        </div>
+
+                        
+                        <div class="form-group my-3">
+                            <label for="search" class="text-muted">Search For Contact</label>
+                            <input id="search" class="form-control" type="text" />
+                        </div>
+                        <table class="table mt-4">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="result"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <script src="js/main.js"></script> -->
+    </body>
+
+    </html>
+    <!-- partial -->
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
